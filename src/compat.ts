@@ -6,6 +6,7 @@ import {
   createClient as createGitHubClient,
   type PartialGitHub,
 } from "@stainless-api/github-internal/tree-shakable";
+import { logger } from "./logger";
 
 interface Comment {
   id: string | number;
@@ -141,20 +142,28 @@ export function isPullRequestOpenedEvent(): boolean {
   }
 }
 
-export function startGroup(id: string, name: string) {
+export function startGroupStr(id: string, name: string) {
   if (isGitLabCI()) {
-    console.log(`\x1b[0Ksection_start:${Date.now()}:${id}\r\x1b[0K${name}`);
+    return `\x1b[0Ksection_start:${Date.now()}:${id}\r\x1b[0K${name}`;
   } else {
-    process.stdout.write(`\n::group::${name}\n`);
+    return `\n::group::${name}\n`;
   }
 }
 
-export function endGroup(id: string) {
+export function endGroupStr(id: string) {
   if (isGitLabCI()) {
-    console.log(`\x1b[0Ksection_end:${Date.now()}:${id}\r\x1b[0K`);
+    return `\x1b[0Ksection_end:${Date.now()}:${id}\r\x1b[0K`;
   } else {
-    process.stdout.write(`\n::endgroup::\n`);
+    return `\n::endgroup::\n`;
   }
+}
+
+export function startGroup(id: string, name: string) {
+  logger.info(startGroupStr(id, name));
+}
+
+export function endGroup(id: string) {
+  logger.info(endGroupStr(id));
 }
 
 export function createCommentClient(
