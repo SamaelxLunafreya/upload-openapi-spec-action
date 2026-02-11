@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.7](https://github.com/stainless-api/upload-openapi-spec-action/compare/v1.11.6...v1.11.7) (2026-02-11)
+
+
+### Bug Fixes
+
+* allow multi-line conventional commits ([#177](https://github.com/stainless-api/upload-openapi-spec-action/issues/177)) ([0079085](https://github.com/stainless-api/upload-openapi-spec-action/commit/0079085539102bb10b95abbdd3652b72ccb4a83d))
+
 ## [1.11.6](https://github.com/stainless-api/upload-openapi-spec-action/compare/v1.11.5...v1.11.6) (2026-02-03)
 
 
