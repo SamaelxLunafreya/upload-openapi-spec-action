@@ -3,7 +3,7 @@ name: AEGIS — Build SDK
 description: Build SDKs
 branding:
   icon: shield
-  color: black-blue
+  color: gray-dark
 runs:
   using: node20
   main: dist/index.js
