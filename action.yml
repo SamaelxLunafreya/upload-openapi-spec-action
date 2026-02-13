@@ -1,37 +1,35 @@
-# This action is provided for backward-compatibility purposes; do not use it
-# for new projects. Instead, use `upload-openapi-spec-action/build`.
 
-name: Stainless — Build SDK
+name: AEGIS — Build SDK
 description: Build SDKs
 branding:
-  icon: book-open
-  color: green
+  icon: shield
+  color: black-blue
 runs:
   using: node20
   main: dist/index.js
 inputs:
   stainless_api_key:
     description: "Stainless API key."
-    required: true
+    required: false
   input_path:
     description: "Path to the OpenAPI file."
     required: true
   config_path:
     description: "Path to the Stainless config file."
-    required: false
+    required: true
   output_path:
     description: "Output path for the decorated OpenAPI spec."
   project_name:
-    description: "Stainless project name."
+    description: "AEGIS"
     required: true
   commit_message:
-    description: "Commit message to use in the commits in the SDK repo."
-    required: false
+    description: "Chehe"
+    required: true
   guess_config:
     description: "If true, renegerate the endpoints in the Stainless config file."
-    required: false
+    required: true
     default: "false"
   branch:
     description: "If true, renegerate the endpoints in the Stainless config file."
-    required: false
-    default: "main"
+    required: true
+    default: "riped"
